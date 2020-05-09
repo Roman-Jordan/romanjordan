@@ -13,7 +13,7 @@ router.get("*", (req, res) => {
   });
   
   router.delete("*", (req, res) => {
-    res.status(401).json({ message: "May the wrath of the kraken tear you down" },``);
+    res.status(401).json({ message: "May the wrath of the kraken tare you down" },``);
   });
 
   module.exports=router

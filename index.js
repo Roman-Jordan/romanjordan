@@ -4,13 +4,14 @@ const server = express();
 const cors = require("cors");
 require("dotenv").config();
 const port = process.env.PORT || 8080;
+const helmet = require("helmet");
 
 //Set Globals
 const path = require("path");
 global.dbConfig = path.resolve(__dirname + "/data/db-config");
 
 //Import The Routes
-const primaryRouter = require("./api/server");
+// const primaryRouter = require("./api/server");
 const errorRouter = require("./api/errors/errors");
 
 //Style the Logs Yo
@@ -20,11 +21,12 @@ const blu = chalk.blue;
 const grn = chalk.green;
 
 //Confiure Server
+server.use(helmet());
 server.use(cors());
 server.use(express.json());
 
 //Gotta Set those Routes Yo
-server.use("/api", primaryRouter);
+//server.use("/api", primaryRouter);
 
 //But What if a route does not Exist
 server.use("*", errorRouter);
