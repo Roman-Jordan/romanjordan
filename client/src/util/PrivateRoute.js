@@ -1,14 +1,19 @@
-import React from 'react'
+import React from "react";
 import {Route} from 'react-router-dom'
-
-
-const PrivaterRoute = ({component: Component, ...rest}) => {
-    return ( <Route 
-        {...rest}
-        render = {() => {
-            return  <Component /> 
-        }}/>
-    )
-}
-
-export default PrivaterRoute;
+const PrivateRoute = ({ privateView: PrivateView,  publicView:PublicView,userStatus,...rest }) => {
+  // const Component = props.component
+  return (
+    <Route
+      {...rest}
+      render={() => {
+        if (localStorage.getItem("token")) {
+          // if token is in localstorage, render the given component
+          return <PrivateView />;
+        } else {
+          return <PublicView />;
+        }
+      }}
+    />
+  );
+};
+export default PrivateRoute;
