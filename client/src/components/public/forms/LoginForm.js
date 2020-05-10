@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { loginHandler } from "../../../util/axiosWithAuth";
+import { axiosWithAuth } from "../../../util/axiosWithAuth";
 
 const LoginForm = props => {
 
@@ -17,7 +17,7 @@ const LoginForm = props => {
     e.preventDefault();
       user.username 
       && user.password 
-      && props.loginHandler(user);
+      && props.axiosWithAuth(user);
   };
 
 
@@ -54,5 +54,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { loginHandler }
+  { axiosWithAuth }
 )(LoginForm);
