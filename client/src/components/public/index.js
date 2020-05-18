@@ -1,17 +1,13 @@
 import React from 'react'
 import Header from './headers'
-import RegisterForm from './forms/RegisterForm'
-import LoginForm from './forms/LoginForm'
-import {Route,Switch} from 'react-router-dom'
+import Body from './body'
 const PublicMainView = (props) =>{
-
+console.log(props.history.location)
     return(
         <>
-        <Header />
-        <Switch>
-            <Route match path="/register" render={()=><RegisterForm {...props}/>} />
-            <Route match pate="/login" render={()=><LoginForm {...props} />} />
-        </Switch>
+        <Header {...props} />
+        <Body/>
+        
         </>
     )
 }

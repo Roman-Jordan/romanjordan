@@ -1,0 +1,49 @@
+.mainHeader {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .headerImage {
+    padding: 2rem 2rem;
+    width: 100%;
+    text-align: left;
+    overflow: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      font-size: 5rem;
+    }
+    .profilePic {
+      img {
+        width: 40px;
+        border-radius: 0.5rem;
+        border: 1px solid #666;
+      }
+    }
+  }
+
+  .navigation {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: rgba(012,020,087,.5);
+    color: #fff;
+    padding: 0.7rem 2rem;
+
+    .navLinks {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 80%;
+      max-width: 50rem;
+      padding: 0rem;
+      font-size: 2rem;
+      @media #{$mobile} {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
