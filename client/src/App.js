@@ -1,6 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import PrivateRoute from "./util/PrivateRoute";
+import PrivateRoute from "./components/util/PrivateRoute";
 import PublicMainView from "./components/public";
 import PrivateMainView from "./components/private";
 import { connect } from "react-redux";
