@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react'
-import {axiosWithAuth} from '../../util/axiosWithAuth'
+import {axiosWithAuth} from '../../public/util/axiosWithAuth'
 
 const UsersList =() =>{
     let [users,setUsers]=useState();
